@@ -1,9 +1,13 @@
 import React from "react";
+import "../global.css"
 
 function Header() {
     return (
-        <div>
-            <h1>Crypto Tracker</h1>
+        <div className="jumbotron head">
+            <div className="container-fluid">
+                <h1 className="headName">Crypto Tracker</h1>
+                <p className="headContent">Cryptocurrency Prices By Market Cap</p>
+            </div>
         </div>
     )
 }

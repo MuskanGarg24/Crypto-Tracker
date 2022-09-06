@@ -1,23 +1,17 @@
 import React from "react";
+import "../global.css";
 
-
-function Coin({id, name, symbol, image, price, marketCap, marketVolume, priceChange}){
-    return(
-        <div>
-            <h1>{name}</h1>
-            <p>{id}</p>
-            <p>{symbol}</p>
-            <img src={image} alt="cryptoCoin"></img>
-            <p>${price}</p>
-            <p>
-                {priceChange<0 ? 
-                (<p>{priceChange.toFixed(2)}%</p>):
-                (<p>{priceChange.toFixed(2)}%</p>)
-            }
-            </p>
-            <p>${marketCap}</p>
-            <p>${marketVolume.toLocaleString()}</p>
-        </div>
+function Coin({ name, symbol, image, price, priceChange, volume, marketCap }) {
+    return (
+        <tr className="rowsize">
+            <td><img src={image} alt="coinImage" className="image"></img></td>
+            <td>{name}</td>
+            <td>{symbol}</td>
+            <td>${price}</td>
+            {priceChange > 0 ? (<td className="green">{priceChange.toFixed(2)}%</td>) : (<td className="red">{priceChange.toFixed(2)}%</td>)}
+            <td>${volume.toLocaleString()}</td>
+            <td>${marketCap.toLocaleString()}</td>
+        </tr>
     )
 }
 

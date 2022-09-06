@@ -1,0 +1,66 @@
+body{
+    background-color: rgba(0, 0, 0, 0.927);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.head{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.headName{
+    font-size: 35px;
+}
+
+.headContent{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.form{
+    width: 40%;
+    margin: 3px auto 15px auto;
+}
+
+.input{
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.tableDiv{
+    width: 80%;
+    margin: auto;
+}
+
+
+.table{
+    margin: 50px auto;
+    width: 100%;
+    color: #fff;
+}
+
+.rowsize{
+    font-size: 16px;
+}
+
+.rowHead{
+    font-size: 18px;
+}
+
+.image{
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.red{
+    color: rgb(255, 0, 0);
+}
+
+.green{
+    color: rgb(20, 251, 20);
+}
