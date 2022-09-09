@@ -4,15 +4,15 @@ import Header from "./components/Header";
 import Coin from "./components/Coin";
 import "./global.css"
 
-
 function App() {
 
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
 
   useEffect(() => {
-    axios.get("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false")
+    axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${page}&sparkline=false`)
       .then((res) => {
         setCoins(res.data);
       })
@@ -28,6 +28,16 @@ function App() {
   const searchedCoins = coins.filter(coin =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  
+  const handleNext = ()=>{
+      setPage(page+1);
+  }
+
+  const handlePrevious = ()=>{
+      setPage(page-1);
+  }
+
 
   return (
     <div>
@@ -62,6 +72,12 @@ function App() {
             })}
           </tbody>
         </table>
+
+        <div className="buttons">
+        <button type="button" className="btn btn-secondary" onClick={handlePrevious}>Previous</button>
+        <button type="button" className="btn btn-primary" onClick={handleNext}>Next</button>
+        </div>
+
       </div>
     </div>
   );

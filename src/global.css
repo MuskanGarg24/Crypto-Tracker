@@ -64,3 +64,14 @@ body{
 .green{
     color: rgb(20, 251, 20);
 }
+
+.buttons{
+    /* border: 1px solid white; */
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.btn{
+    margin-left: 20px;
+    font-size: 18px;
+}
